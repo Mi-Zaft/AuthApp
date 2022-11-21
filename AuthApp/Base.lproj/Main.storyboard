@@ -17,7 +17,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="37" translatesAutoresizingMaskIntoConstraints="NO" id="SRD-kl-ZuQ">
-                                <rect key="frame" x="60" y="302" width="270" height="105"/>
+                                <rect key="frame" x="60" y="197" width="270" height="105"/>
                                 <subviews>
                                     <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Login" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="XSf-Jh-OJG">
                                         <rect key="frame" x="0.0" y="0.0" width="270" height="34"/>
@@ -32,7 +32,7 @@
                                 </subviews>
                             </stackView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Wkr-Tg-9QA">
-                                <rect key="frame" x="148" y="455" width="94" height="43.333333333333314"/>
+                                <rect key="frame" x="148" y="350" width="94" height="43.333333333333314"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain" title="Log In">
                                     <fontDescription key="titleFontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="25"/>
@@ -42,7 +42,7 @@
                                 </connections>
                             </button>
                             <stackView opaque="NO" contentMode="scaleToFill" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="K3B-XT-wAC">
-                                <rect key="frame" x="16" y="526.33333333333337" width="358" height="31.666666666666629"/>
+                                <rect key="frame" x="16" y="421.33333333333331" width="358" height="31.666666666666686"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WYx-d2-MjZ">
                                         <rect key="frame" x="0.0" y="0.0" width="175" height="31.666666666666668"/>
@@ -75,7 +75,7 @@
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="K3B-XT-wAC" secondAttribute="trailing" constant="16" id="SOj-NA-u1E"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="SRD-kl-ZuQ" secondAttribute="trailing" constant="60" id="X45-eJ-2Lt"/>
                             <constraint firstItem="SRD-kl-ZuQ" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="60" id="d7Y-nT-cnV"/>
-                            <constraint firstItem="SRD-kl-ZuQ" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="255" id="f0N-al-K89"/>
+                            <constraint firstItem="SRD-kl-ZuQ" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="150" id="f0N-al-K89"/>
                             <constraint firstItem="K3B-XT-wAC" firstAttribute="top" secondItem="Wkr-Tg-9QA" secondAttribute="bottom" constant="28" id="kPr-Vh-4t6"/>
                             <constraint firstItem="Wkr-Tg-9QA" firstAttribute="top" secondItem="SRD-kl-ZuQ" secondAttribute="bottom" constant="48" id="nnG-pm-HTs"/>
                         </constraints>
