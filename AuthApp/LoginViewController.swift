@@ -7,13 +7,17 @@
 
 import UIKit
 
-class LoginViewController: UIViewController {
+final class LoginViewController: UIViewController {
     
     @IBOutlet var userNameTextField: UITextField!
     @IBOutlet var passwordTextField: UITextField!
     
     private let userName = "Root"
     private let password = "123456"
+    
+    override func viewDidLoad() {
+        registerKeyboardNotification()
+    }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         guard let welcomeVC = segue.destination as? WelcomeViewController else { return }
@@ -24,7 +28,7 @@ class LoginViewController: UIViewController {
         super.touchesBegan(touches, with: event)
         view.endEditing(true)
     }
-
+    
     @IBAction func loginTapped() {
         if userNameTextField.text == userName && passwordTextField.text == password {
             performSegue(withIdentifier: "goWelcomeVC", sender: nil)
@@ -68,3 +72,30 @@ class LoginViewController: UIViewController {
     
 }
 
+extension LoginViewController {
+    private func registerKeyboardNotification() {
+        NotificationCenter.default.addObserver(self,
+                                               selector: #selector(keyboardWillShow),
+                                               name: UIResponder.keyboardWillShowNotification,
+                                               object: nil)
+        NotificationCenter.default.addObserver(self,
+                                               selector: #selector(keyboardWillHide),
+                                               name: UIResponder.keyboardWillHideNotification,
+                                               object: nil)
+    }
+    
+    @objc private func keyboardWillShow(notification: NSNotification) {
+        if let keyboardSize = (notification.userInfo?[UIResponder.keyboardFrameEndUserInfoKey]
+                               as? NSValue)?.cgRectValue {
+            if view.frame.origin.y == 0 {
+                view.frame.origin.y -= keyboardSize.height - 200
+            }
+        }
+    }
+    
+    @objc private func keyboardWillHide(notification: NSNotification) {
+        if view.frame.origin.y != 0 {
+            view.frame.origin.y = 0
+        }
+    }
+}
