@@ -12,8 +12,7 @@ final class LoginViewController: UIViewController {
     @IBOutlet var userNameTextField: UITextField!
     @IBOutlet var passwordTextField: UITextField!
     
-    private let userName = "Root"
-    private let password = "123456"
+    private let userMaxim = User(userName: "Root", password: "123456")
     
     override func viewDidLoad() {
         registerKeyboardNotification()
@@ -21,7 +20,7 @@ final class LoginViewController: UIViewController {
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         guard let welcomeVC = segue.destination as? WelcomeViewController else { return }
-        welcomeVC.userName = userName
+        welcomeVC.userName = userMaxim.userName
     }
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
@@ -30,7 +29,8 @@ final class LoginViewController: UIViewController {
     }
     
     @IBAction func loginTapped() {
-        if userNameTextField.text == userName && passwordTextField.text == password {
+        if userNameTextField.text == userMaxim.userName &&
+            passwordTextField.text == userMaxim.password {
             performSegue(withIdentifier: "goWelcomeVC", sender: nil)
         } else {
             let alert = UIAlertController(
